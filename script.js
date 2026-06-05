@@ -11,6 +11,7 @@ const errorMessage = document.getElementById('Error')
 const card = document.getElementById('card')
 const cityName = document.getElementById('cityName')
 const cityTemp = document.getElementById('temperature')
+const weatherDesc = document.getElementById('weatherDesc')
 const cityHumidity = document.getElementById('humidity')
 const cityWindSpeed = document.getElementById('windSpeed')
 const weatherIcon = document.getElementById('weatherIcon')
@@ -49,6 +50,7 @@ function displayWeatherInfo(data) {
 
   cityName.textContent = data.name
   cityTemp.textContent = Math.floor(data.main.temp)
+  weatherDesc.textContent = data.weather[0].description
   weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
   cityHumidity.textContent = `${data.main.humidity}%`
   cityWindSpeed.textContent = `${data.wind.speed} km/h`
