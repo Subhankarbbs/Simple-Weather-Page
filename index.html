@@ -6,26 +6,36 @@
     <title>Weather</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="bg-white container mx-auto">
-    <div class="flex flex-col justify-center items-center min-h-screen gap-4">
-      <div id="weatherForm" class="flex justify-center items-center">
-        <form action="" class="bg-white p-6 rounded-lg shadow-md">
-          <h1 class="text-2xl font-bold mb-4 text-center">Weather Dashboard</h1>
-          <p class="text-sm text-slate-600 mb-4 text-center">
+  <body class="bg-gray-50 text-gray-800 font-sans antialiased">
+    <div
+      class="flex flex-col justify-center items-center min-h-screen gap-6 p-4">
+      <div class="w-full max-w-md">
+        <form
+          id="weatherForm"
+          action=""
+          class="bg-white p-6 sm:p-8 rounded-2xl shadow-md border border-gray-100">
+          <h1 class="text-2xl font-bold mb-2 text-center">Weather Dashboard</h1>
+          <p class="text-sm text-slate-500 mb-6 text-center">
             Enter a city name to get its weather information.
           </p>
-          <input
-            id="cityInput"
-            type="text"
-            placeholder="Enter city name"
-            class="border border-gray-300 rounded py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <button
-            id="GetWeatherBtn"
-            type="submit"
-            class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            Get Weather
-          </button>
-          <div id="Error" class="hidden text-red-500 text-sm mt-2 text-center">
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <input
+              id="cityInput"
+              type="text"
+              placeholder="Enter city name"
+              class="w-full flex-1 border border-gray-300 rounded-lg py-2.5 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow" />
+            <button
+              id="GetWeatherBtn"
+              type="submit"
+              class="w-full sm:w-auto bg-blue-500 text-white font-medium py-2.5 px-6 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 transition-colors">
+              Search
+            </button>
+          </div>
+
+          <div
+            id="Error"
+            class="hidden text-red-500 text-sm mt-4 text-center font-medium">
             <p>Error: City not found</p>
           </div>
         </form>
@@ -33,12 +43,12 @@
 
       <div
         id="card"
-        class="hidden max-w-sm mx-auto bg-white p-8 rounded-3xl shadow-xl border border-gray-100 mt-4 transition-all duration-300 hover:shadow-2xl">
+        class="hidden w-full max-w-sm mx-auto bg-white p-8 rounded-3xl shadow-xl border border-gray-100 transition-all duration-300 hover:shadow-2xl">
         <div class="flex flex-col items-center">
           <h1
-            class="flex items-center text-2xl font-bold text-gray-800 tracking-tight mb-1">
+            class="flex items-center text-2xl font-bold text-gray-800 tracking-tight mb-1 text-center">
             <svg
-              class="w-5 h-5 mr-1.5 text-blue-500"
+              class="w-5 h-5 mr-1.5 text-blue-500 shrink-0"
               fill="currentColor"
               viewBox="0 0 20 20"
               aria-hidden="true">
@@ -47,12 +57,12 @@
                 d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
                 clip-rule="evenodd" />
             </svg>
-            <span id="cityName">City Name</span>
+            <span id="cityName" class="truncate">City Name</span>
           </h1>
 
           <p
             id="weatherDesc"
-            class="text-sm text-gray-500 font-medium uppercase tracking-widest">
+            class="text-sm text-gray-500 font-medium uppercase tracking-widest text-center">
             Weather Description
           </p>
 
