@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-white container mx-auto">
+    <div class="flex flex-col justify-center items-center min-h-screen gap-4">
+      <div id="weatherForm" class="flex justify-center items-center">
+        <form action="" class="bg-white p-6 rounded-lg shadow-md">
+          <h1 class="text-2xl font-bold mb-4 text-center">Weather Dashboard</h1>
+          <p class="text-sm text-slate-600 mb-4 text-center">
+            Enter a city name to get its weather information.
+          </p>
+          <input
+            id="cityInput"
+            type="text"
+            placeholder="Enter city name"
+            class="border border-gray-300 rounded py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <button
+            id="GetWeatherBtn"
+            type="submit"
+            class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            Get Weather
+          </button>
+          <div id="Error" class="hidden text-red-500 text-sm mt-2 text-center">
+            <p>Error: City not found</p>
+          </div>
+        </form>
+      </div>
+
+      <div
+        id="card"
+        class="hidden max-w-sm mx-auto bg-white p-8 rounded-3xl shadow-xl border border-gray-100 mt-4 transition-all duration-300 hover:shadow-2xl">
+        <div class="flex flex-col items-center">
+          <h1
+            id="cityName"
+            class="flex items-center text-2xl font-bold text-gray-800 tracking-tight mb-1">
+            <svg
+              class="w-5 h-5 mr-1.5 text-blue-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              aria-hidden="true">
+              <path
+                fill-rule="evenodd"
+                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                clip-rule="evenodd" />
+            </svg>
+            City Name
+          </h1>
+
+          <p
+            id="weatherDesc"
+            class="text-sm text-gray-500 font-medium uppercase tracking-widest">
+            Weather Description
+          </p>
+
+          <div
+            id="tempInfo"
+            class="flex items-center justify-center mt-6 mb-2 gap-4">
+            <img
+              id="weatherIcon"
+              src=""
+              alt="Weather icon"
+              class="w-24 h-24 drop-shadow-md" />
+            <div class="flex items-start">
+              <span
+                id="temperature"
+                class="text-6xl font-extrabold text-gray-900 tracking-tighter"
+                >--</span
+              >
+              <span class="text-3xl font-medium text-gray-400 mt-1 ml-1"
+                >°C</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="flex gap-8 mt-6 pt-6 border-t border-gray-100 w-full justify-center text-gray-600">
+            <div class="flex flex-col items-center">
+              <span
+                class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1"
+                >Humidity</span
+              >
+              <span id="humidity" class="text-lg font-bold text-gray-700"
+                >--%</span
+              >
+            </div>
+            <div class="flex flex-col items-center">
+              <span
+                class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1"
+                >Wind</span
+              >
+              <span id="windSpeed" class="text-lg font-bold text-gray-700"
+                >-- km/h</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
